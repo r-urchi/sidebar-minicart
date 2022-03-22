@@ -1,0 +1,36 @@
+.quantity_Container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    flex-direction: column;
+}
+
+.quantity_Container_Label {
+    display: flex;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.quantity_Container_Icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    padding: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 25px;
+    opacity: .8;
+}
+
+.quantity_Container_Icon_Cont {
+    display: flex;
+    width: 75px;
+    justify-content: space-between;
+    margin-top: 15px;
+}

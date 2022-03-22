@@ -1,0 +1,11 @@
+mutation ($orderFormId: ID, $text: String) {
+  insertCoupon(orderFormId: $orderFormId, text: $text) {
+    messages {
+      couponMessages {
+        code,
+        status,
+        text
+      }
+    }
+  }
+}

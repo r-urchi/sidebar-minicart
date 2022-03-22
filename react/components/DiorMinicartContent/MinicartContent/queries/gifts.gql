@@ -1,0 +1,5 @@
+query ($orderFormId: String) {
+  getSelectableGifts(orderForm: {ordeFormId: $orderFormId}) {
+    id
+  }
+}

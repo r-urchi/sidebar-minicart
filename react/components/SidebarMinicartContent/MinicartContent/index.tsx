@@ -3,15 +3,13 @@ import MinicartContent, { MinicartProps } from './MinicartContent';
 import { pathOr } from 'ramda';
 import { useEffect, useMemo, useState } from 'react';
 import { fillDecimals } from '../utils/utils';
-import { useSelectableGifts } from './hooks/useSelectableGifts';
 
 const { useOrderForm } = OrderForm;
 import { useOrderItems } from 'vtex.order-items/OrderItems';
 
 
-const DiorMinicartContent = (props:any) => {
+const SidebarMinicartContent = () => {
 
-  const { selectableGifts } = useSelectableGifts();
   const OrderFormContext = useOrderForm();
   const { updateQuantity } = useOrderItems();
 
@@ -22,10 +20,6 @@ const DiorMinicartContent = (props:any) => {
 
   const totalizers = pathOr([], ['orderForm', 'totalizers'], OrderFormContext);
   const orderformId = pathOr('', ['orderForm', 'id'], OrderFormContext);
-
-  const existGifts = useMemo<boolean>(() => {
-    return !!selectableGifts.length;
-  }, [selectableGifts]);
 
   const items = useMemo(() => {
     const i = pathOr([], ['orderForm', 'items'], OrderFormContext);
@@ -71,8 +65,6 @@ const DiorMinicartContent = (props:any) => {
     updateQuantity({ index: value, quantity: 0, seller: 1 });
   };
 
-
-
   const context: MinicartProps = {
     total,
     subtotal,
@@ -82,10 +74,9 @@ const DiorMinicartContent = (props:any) => {
     items,
     goToCheckout,
     remove,
-    existGifts
   };
 
   return <MinicartContent context={context} />;
 };
 
-export default DiorMinicartContent;
+export default SidebarMinicartContent;

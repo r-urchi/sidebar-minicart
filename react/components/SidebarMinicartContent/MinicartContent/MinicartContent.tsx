@@ -13,7 +13,6 @@ export interface MinicartProps {
   items: any[];
   goToCheckout: () => void;
   remove: (id: any) => void;
-  existGifts: boolean;
 }
 
 const MinicartContent = ({ context }: { context: MinicartProps }) => {
@@ -22,10 +21,8 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
     subtotal,
     items,
     remove,
-    existGifts,
   } = context;
 
-  const handlerOpen = () => setOpen(!open);
   const close = () => setOpen(false);
 
   return items && items.length ? (
@@ -71,7 +68,7 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
                 </div>
               </div>
             </div>
-          ) : <Fragment/>
+          ) : <Fragment />
         })}
       </div>
       <div className={Style.minicart_content_subtotal_container}>
@@ -81,16 +78,9 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
         <div>
         </div>
       </div>
-      {!existGifts ? (
-        <a className={Style.minicart_content_go_to_checkout} href="/checkout#/cart">
-          CONTINUAR PARA EL CHECKOUT
-        </a>
-      ) : (
-        <a className={Style.minicart_content_go_to_checkout} onClick={handlerOpen}>
-          CONTINUAR PARA EL CHECKOUT
-        </a>
-      )}
-      {!open && existGifts && <div className={Style.minicart_content_gifts_message}>Seleccione sus muestras a continuación</div>}
+      <a className={Style.minicart_content_go_to_checkout} href="/checkout#/cart">
+        CONTINUAR PARA EL CHECKOUT
+      </a>
     </div>
   ) : (
     <div className={Style.minicart_content}>

@@ -1,5 +1,5 @@
 {
   "glamit-sidebar-minicart": {
-    "component": "DiorMinicartContent"
+    "component": "SidebarMinicartContent"
   }
 }

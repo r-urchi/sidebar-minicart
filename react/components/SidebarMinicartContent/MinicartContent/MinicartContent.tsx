@@ -53,20 +53,13 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
                 <div className={Style.minicart_content_price}>
                   ${fillDecimals((item?.sellingPrice || 0) / 100, 0)}
                 </div>
-                <div
-                  className={Style.minicart_content_remove}
-                  onClick={() => {
-                    remove && remove(i);
-                  }}
-                >
-                  Remover
-                </div>
               </div>
               <div className={Style.minicart_content_quantity}>
                 <div className={Style.minicart_content_quantity_container}>
                   <Quantity {...item} />
                 </div>
               </div>
+              <div className={Style.minicart_content_remove} onClick={() => { remove && remove(i); }}>Remover</div>
             </div>
           ) : <Fragment />
         })}

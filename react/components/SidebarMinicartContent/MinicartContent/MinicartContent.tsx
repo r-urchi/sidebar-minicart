@@ -1,8 +1,7 @@
 import Style from './MinicartContent.css';
 import { fillDecimals, borrarUnico } from '../utils/utils';
 import Quantity from './quantity-selector';
-import { Block } from 'vtex.render-runtime';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 
 export interface MinicartProps {
   total: string;
@@ -16,30 +15,15 @@ export interface MinicartProps {
 }
 
 const MinicartContent = ({ context }: { context: MinicartProps }) => {
-  const [open, setOpen] = useState(false);
   const {
     subtotal,
     items,
     remove,
   } = context;
 
-  const close = () => setOpen(false);
 
   return items && items.length ? (
     <div className={Style.minicart_content}>
-      {open && (
-        <div className={Style.minicart_content_gifts}>
-          <Block id="glamit-gift-context" close={close} />
-          <div className={Style.minicart_content_subtotal_container}>
-            <div className={Style.minicart_content_subtotal}>
-              Subtotal: &nbsp; <b>${subtotal}</b>
-            </div>
-          </div>
-          <a className={Style.minicart_content_go_to_checkout} href="/checkout#/cart">
-            CHECKOUT
-          </a>
-        </div>
-      )}
       <div className={Style.minicart_content_list_items}>
         {items.map((item, i) => {
           return !item.isGift ? (
@@ -64,16 +48,16 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
           ) : <Fragment />
         })}
       </div>
-      <div className={Style.minicart_content_subtotal_container}>
-        <div className={Style.minicart_content_subtotal}>
-          Subtotal:	&nbsp; <b>${subtotal}</b>
+      <div className={Style.minicart_container_footer}>
+        <div className={Style.minicart_content_subtotal_container}>
+          <div className={Style.minicart_content_subtotal}>
+            Subtotal:	&nbsp; <b>${subtotal}</b>
+          </div>
+          <div>
+          </div>
         </div>
-        <div>
-        </div>
+        <a className={Style.minicart_content_go_to_checkout} href="/checkout#/cart">CERRAR PEDIDO</a>
       </div>
-      <a className={Style.minicart_content_go_to_checkout} href="/checkout#/cart">
-        CONTINUAR PARA EL CHECKOUT
-      </a>
     </div>
   ) : (
     <div className={Style.minicart_content}>

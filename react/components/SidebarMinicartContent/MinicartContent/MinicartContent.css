@@ -1,9 +1,30 @@
 .minicart_content {
-    padding: 0 0 30px;
+    top: 80px;
+    position: sticky;
+    max-width: 10.5vw;
+    max-height: 80vh;
+    margin-left: .3rem;
 }
 .minicart_content_list_items {
-    padding: 0 20px;
+    margin: 0;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 500px;
+    scroll-behavior: smooth;
 }
+.minicart_content_list_items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.minicart_content_list_items::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 12px;
+}
+.minicart_content_list_items::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
 .minicart_content_item {
     display: flex;
     align-items: center;
@@ -11,46 +32,54 @@
     flex-direction: column;
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
+    max-height: 370px;
+    padding: 10px 5px 15px 5px;
+    border-bottom: 1px solid #333;
 }
 .minicart_content_image_container {
     flex: 0 0 11.875rem;
     position: relative;
+    max-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .minicart_content_separator {
     flex-basis: 2rem;
 }
-.minicart_content_image {}
+.minicart_content_image {
+    max-height: 150px;
+}
 .minicart_content_description {
     flex: 1;
 }
 .minicart_content_name {
-    line-height: 20px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: .7rem;
 }
 .minicart_content_price {
-    margin: 20px 0;
-    line-height: 15px;
-    font-size: 15px;
+    margin: 7px auto;
+    text-align: center;
+    font-size: .7rem;
     font-weight: bold;
 }
 .minicart_content_remove {
-    margin-right: auto;
-    text-align: left;
+    text-align: center;
     text-decoration: underline;
     background-color: transparent;
     border: none;
     padding: 0;
-    font-size: 13px;
+    font-size: .7rem;
     cursor: pointer;
 }
 .minicart_content_quantity {
-    right: 0;
-    padding-right: 20px;
     margin-bottom: 10px;
     text-align: center;
 }
+
+.minicart_container_footer{
+}
+
 .minicart_content_quantity_item {}
 .minicart_content_quantity_container{}
 .minicart_content_subtotal_container {
@@ -60,32 +89,29 @@
     margin-bottom: 0;
     text-align: center;
     background-color: #f6f6f6;
-    margin-top: 40px;
-    margin-bottom: 25px;
 }
 .minicart_content_subtotal {
-    font-size: 15px;
+    font-size: .8rem;
     display: flex;
     justify-content: center;
-    height: 19px;    
+    height: 10px;    
 }
 .minicart_content_subtotal_Message {
     font-size: 13px;
 }
 .minicart_content_go_to_checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    background-color: #000;
-    border-color: #000;
+    background-color: #333;
+    border-color: #333;
     padding: .5rem 1rem;
-    font-size: 0.875rem;
-    line-height: 2.2;
+    font-size: .8rem;
     height: 50px;
     min-height: 50px;
     max-height: initial;
-    display: block;
     max-width: 283px;
-    text-align: center;
-    margin: 0 auto;
     cursor: pointer;
     text-decoration: none;
 }
@@ -146,10 +172,10 @@
     max-width: 350px;
     margin: 0 auto;
     border-radius: 60px;
-    border: 0.96px solid #000;
+    border: 0.96px solid #333;
     box-sizing: border-box;
-    color: #000;
-    border-color: #000;
+    color: #333;
+    border-color: #333;
     overflow: hidden;
     background: #fff;
     padding: 0 0 0 20px;
@@ -162,7 +188,7 @@
 }
 .cupon_Input_button {
     width: 95px;
-    background: #000;
+    background: #333;
     color: #fff;
     height: 100%;
     display: flex;
@@ -181,14 +207,14 @@
 
 .cupon_success {
     margin-top: 20px;
-    color: #000;
+    color: #333;
     font-size: 14px;
     line-height: 24px;
 }
 
 .minicart_content_gifts_message {
     font-size: 14px;
-    color: #000;
+    color: #333;
     text-align: center;
     margin-top: 20px;
 }

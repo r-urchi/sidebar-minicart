@@ -10,21 +10,19 @@
 .quantity_Container_Label {
     display: flex;
     font-weight: 400;
-    font-size: 14px;
+    font-size: .8rem;
 }
 
 .quantity_Container_Icon {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid #000;
-    padding: 0;
+    border: 1px solid #333;
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 25px;
     opacity: .8;
 }
 
@@ -32,5 +30,5 @@
     display: flex;
     width: 75px;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 5px;
 }

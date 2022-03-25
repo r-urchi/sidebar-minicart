@@ -10,7 +10,8 @@
 .quantity_Container_Label {
     display: flex;
     font-weight: 400;
-    font-size: .8rem;
+    font-size: .7rem;
+    color: #333;
 }
 
 .quantity_Container_Icon {
@@ -31,4 +32,8 @@
     width: 75px;
     justify-content: space-between;
     margin-top: 5px;
+}
+
+.fa-minus, .fa-plus{
+    font-size: 12px;
 }

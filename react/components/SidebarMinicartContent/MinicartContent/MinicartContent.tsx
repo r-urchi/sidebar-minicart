@@ -1,6 +1,7 @@
 import Style from './MinicartContent.css';
 import { fillDecimals, borrarUnico } from '../utils/utils';
 import Quantity from './quantity-selector';
+import Icon from '../../GlamitFont/Icons';
 import { Fragment } from 'react';
 
 export interface MinicartProps {
@@ -26,7 +27,7 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
     <div className={Style.minicart_content}>
       <div className={Style.minicart_content_list_items}>
         {items.map((item, i) => {
-          return !item.isGift ? (
+          return item ? (
             <div className={Style.minicart_content_item}>
               <div className={Style.minicart_content_image_container}>
                 <img className={Style.minicart_content_image} src={item?.imageUrls?.at2x} />
@@ -43,7 +44,7 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
                   <Quantity {...item} />
                 </div>
               </div>
-              <div className={Style.minicart_content_remove} onClick={() => { remove && remove(i); }}>Remover</div>
+              <div className={Style.minicart_content_remove} onClick={() => { remove && remove(i); }}><Icon base='fas' icon='fa-trash' /></div>
             </div>
           ) : <Fragment />
         })}

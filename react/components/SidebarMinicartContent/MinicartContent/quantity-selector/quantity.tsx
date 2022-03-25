@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '../../../GlamitFont/Icons';
 import QuantityStyle from './quantity.css';
 
 const QuantityWrapper = ({ quantity, upQuantity, downQuantity }: any) => {
@@ -6,10 +7,10 @@ const QuantityWrapper = ({ quantity, upQuantity, downQuantity }: any) => {
         <div className={QuantityStyle.quantity_Container_Label}>Cantidad: {quantity}</div>
         <div className={QuantityStyle.quantity_Container_Icon_Cont}>
             <div onClick={downQuantity} className={QuantityStyle.quantity_Container_Icon} style={{ pointerEvents: quantity <= 1 ? 'none' : 'initial' }}>
-                -
+                <Icon base='fas' icon='fa-minus' />
             </div>
             <div onClick={upQuantity} className={QuantityStyle.quantity_Container_Icon} >
-                +
+                <Icon base='fas' icon='fa-plus' />
             </div>
         </div>
     </div>

@@ -16,11 +16,11 @@ export interface MinicartProps {
 
 const MinicartContent = ({ context }: { context: MinicartProps }) => {
   const {
+    total,
     subtotal,
     items,
     remove,
   } = context;
-
 
   return items && items.length ? (
     <div className={Style.minicart_content}>
@@ -49,12 +49,9 @@ const MinicartContent = ({ context }: { context: MinicartProps }) => {
         })}
       </div>
       <div className={Style.minicart_container_footer}>
-        <div className={Style.minicart_content_subtotal_container}>
-          <div className={Style.minicart_content_subtotal}>
-            Subtotal:	&nbsp; <b>${subtotal}</b>
-          </div>
-          <div>
-          </div>
+        <div className={Style.minicart_content_totalizers_container}>
+          <div className={Style.minicart_content_subtotal}>Subtotal:	&nbsp; <b>${subtotal}</b></div>
+          <div className={Style.minicart_content_total}>Total:	&nbsp; <b>${total}</b></div>
         </div>
         <a className={Style.minicart_content_go_to_checkout} href="/checkout#/cart">CERRAR PEDIDO</a>
       </div>
